@@ -60,7 +60,7 @@ import java.util.Locale
 fun Home() {
     val featured = remember { PostRepo.getFeaturedPost() }
     val posts = remember { PostRepo.getPosts() }
-    MaterialTheme {
+     JetNewsTheme {
         Scaffold(
             topBar = { AppBar() }
         ) { innerPadding ->
@@ -208,16 +208,25 @@ fun PostItem(
 @Composable
 private fun PostItemPreview() {
     val post = remember { PostRepo.getFeaturedPost() }
-    Surface {
-        PostItem(post = post)
+    JetNewsTheme {
+
+        Surface {
+
+            PostItem(post = post)
+        }
     }
+
 }
 
 @Preview("Featured Post")
 @Composable
 private fun FeaturedPostPreview() {
     val post = remember { PostRepo.getFeaturedPost() }
-    FeaturedPost(post = post)
+    JetNewsTheme {
+
+        FeaturedPost(post = post)
+    }
+
 }
 
 @Preview("Home")
